@@ -40,12 +40,6 @@ export function screen(...kids) {
   window.scrollTo(0, 0);
 }
 
-export function topbar(title, back = '#/') {
-  return h('header', { class: 'top' },
-    h('a', { class: 'round dark', href: back, 'aria-label': 'Назад' }, icon('back')),
-    h('h1', { class: 'top-title' }, title));
-}
-
 export const tag = (text, cls = '') => h('span', { class: `tag ${cls}`.trim() }, text);
 
 // Кнопки рядом собраны в одну плитку (правило стиля автора).
@@ -57,9 +51,10 @@ export function btn(text, onclick, cls = '', ico = null) {
   return h('button', { class: `btn ${cls}`.trim(), type: 'button', onclick }, ico && icon(ico), h('span', {}, text));
 }
 
-// Строка арабских слов справа налево; render(слово, номер) рисует одно слово.
-export function wordRow(words, render, cls = '') {
-  return h('div', { class: `words ${cls}`.trim(), dir: 'rtl', lang: 'ar' }, words.map(render));
+// «18 ноября» из «2026-11-18».
+export function dateRu(day) {
+  const [y, m, d] = day.split('-').map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' });
 }
 
 export const lineText = (line) => line.w.map((x) => x[0]).join(' ') + (line.p ? line.p : '');

@@ -1,6 +1,6 @@
 // Один плеер на всё приложение. Строка играет от t[0] до t[1] одного файла записи.
 // Между строками в файле тишина 0,4 с, поэтому остановка с запасом не задевает соседнюю строку.
-import { h, icon } from './ui.js?v=8408ebe5';
+import { h, icon } from './ui.js?v=ecc95a53';
 
 let a = null;
 let end = 0;
@@ -41,11 +41,12 @@ export function play(src, from, to, onDone, time) {
 }
 
 // Кнопка «Слушать» для строки или всего текста. Второе нажатие останавливает.
-export function playButton(src, from, to, { label = 'Слушать', cls = '', time, auto = false } = {}) {
+// onEnd: звук закончился или остановлен (снять подсветку строки).
+export function playButton(src, from, to, { label = 'Слушать', cls = '', time, auto = false, onEnd } = {}) {
   const text = h('span', {}, label);
   const ico = icon('play');
   const b = h('button', { class: `btn ${cls}`.trim(), type: 'button', 'aria-label': label ? null : 'Слушать строку' }, ico, label && text);
-  const idle = () => { b.classList.remove('on'); b.firstChild.replaceWith(icon('play')); text.textContent = label; };
+  const idle = () => { b.classList.remove('on'); b.firstChild.replaceWith(icon('play')); text.textContent = label; onEnd && onEnd(); };
   const start = () => {
     b.classList.add('on');
     b.firstChild.replaceWith(icon('stop'));
