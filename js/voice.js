@@ -1,7 +1,7 @@
 // Проверка чтения голосом. Браузер (Chrome, Edge, Safari) слушает арабскую речь
 // и отдаёт текст; запись голоса уходит на сервер Google, Microsoft или Apple.
-import { h, icon } from './ui.js?v=ecc95a53';
-import { check } from './arabic.js?v=ecc95a53';
+import { h, icon } from './ui.js?v=619c8135';
+import { check } from './arabic.js?v=619c8135';
 
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 export const canListen = Boolean(SR);

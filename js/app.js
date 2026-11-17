@@ -1,11 +1,11 @@
 // Хифз: главная и переходы между экранами (адрес после #).
-import { h, ar, tag, btn, screen, lineText, plural, dateRu } from './ui.js?v=ecc95a53';
-import { stop } from './audio.js?v=ecc95a53';
-import { state } from './progress.js?v=ecc95a53';
-import { study } from './study.js?v=ecc95a53';
-import { ROUNDS } from './rounds.js?v=ecc95a53';
-import { VERSION, NEWS } from './version.js?v=ecc95a53';
-import istikhara from './data/istikhara.js?v=ecc95a53';
+import { h, ar, tag, btn, screen, lineText, plural, dateRu } from './ui.js?v=619c8135';
+import { stop } from './audio.js?v=619c8135';
+import { state } from './progress.js?v=619c8135';
+import { study } from './study.js?v=619c8135';
+import { ROUNDS } from './rounds.js?v=619c8135';
+import { VERSION, NEWS } from './version.js?v=619c8135';
+import istikhara from './data/istikhara.js?v=619c8135';
 
 const TEXT = istikhara;
 const go = (hash) => () => { location.hash = hash; };

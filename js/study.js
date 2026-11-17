@@ -1,12 +1,12 @@
 // Учёба по всему тексту, «Слова тают» (версия 2.0.0, выбор автора 2026-11-17).
 // Весь текст на одном экране, пять кругов: с каждым кругом слов меньше.
 // Касание пустого места показывает слово на 1,6 с и считается подсказкой.
-import { h, tag, tile, btn, icon, screen, plural, dateRu } from './ui.js?v=ecc95a53';
-import { play, playButton, stop } from './audio.js?v=ecc95a53';
-import { firstLetter } from './arabic.js?v=ecc95a53';
-import { canListen, voiceButton } from './voice.js?v=ecc95a53';
-import { ROUNDS, LAST, daySeed, hiddenSet, passed } from './rounds.js?v=ecc95a53';
-import { INTERVALS, today, state, setRound, finishLearn, finishReview } from './progress.js?v=ecc95a53';
+import { h, tag, tile, btn, icon, screen, plural, dateRu } from './ui.js?v=619c8135';
+import { play, playButton, stop } from './audio.js?v=619c8135';
+import { firstLetter, mushaf } from './arabic.js?v=619c8135';
+import { canListen, voiceButton } from './voice.js?v=619c8135';
+import { ROUNDS, LAST, daySeed, hiddenSet, passed } from './rounds.js?v=619c8135';
+import { INTERVALS, today, state, setRound, finishLearn, finishReview } from './progress.js?v=619c8135';
 
 const days = (n) => `${n} ${plural(n, 'день', 'дня', 'дней')}`;
 
@@ -62,7 +62,7 @@ export function study(text, startAt) {
   function line(l, i, hide, cue, at) {
     const parts = l.w.map(([w], j) => {
       const n = at + j;
-      const el = hide.has(n) ? (slots[n] = slot(w, cue && firstLetter(w), () => peek(n))) : w;
+      const el = hide.has(n) ? (slots[n] = slot(mushaf(w), cue && mushaf(firstLetter(w)), () => peek(n))) : mushaf(w);
       return j ? [' ', el] : el;
     });
     const ln = h('span', { class: 'ln' }, parts, l.p,

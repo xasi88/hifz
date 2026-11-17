@@ -54,6 +54,10 @@ export function check(expected, heard) {
   return { ok, score: n ? good / n : 0 };
 }
 
+// Показ в шрифте «Мадина»: в нём кружок U+0652 значит «не читается», а сукун рисуется знаком U+06E1.
+// В данных текст как в хадисе (сукун U+0652); на экран идёт знак мусхафа. Данные не меняются.
+export const mushaf = (s) => String(s).replaceAll('ْ', 'ۡ');
+
 // Первая буква слова вместе с её огласовкой: подсказка «первые буквы».
 export function firstLetter(word) {
   const m = word.match(/^[\u0621-\u064A\u0671][\u064B-\u065F\u0670]*/);

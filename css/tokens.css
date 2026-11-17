@@ -1,9 +1,16 @@
 /* Цвета и шрифты Хифза: тема «Фиолет и лайм», как у Органайзера.
    Правила вида: docs/Брендбук.md. Новые цвета только здесь. */
+/* «Мадина»: KFGQPC Uthmanic Script Hafs, шрифт мусхафа Мадины (правило автора для всех проектов,
+   «Предпочтения» в хранилище). Файл из TanWin, не изменён. Метрики как в TanWin: строки ровные. */
 @font-face {
-  font-family: 'Amiri Quran';
-  src: url('../fonts/amiri-quran.woff2') format('woff2');
+  font-family: 'KFGQPC Hafs';
+  src: url('../fonts/hafs.woff2') format('woff2');
   font-display: swap;
+  ascent-override: 140%;
+  descent-override: 80%;
+  line-gap-override: 0%;
+  /* Без U+060C: запятую «،» шрифт рисует кружком, похожим на знак конца аята. Её и точку берёт запасной шрифт. */
+  unicode-range: U+0600-060B, U+060D-06FF, U+0750-077F, U+08A0-08FF, U+200C-200D, U+FB50-FDFF, U+FE70-FEFF;
 }
 
 :root {
@@ -31,7 +38,10 @@
   --f-heavy: 'Segoe UI Black', 'Arial Black', system-ui, sans-serif;
   --f-text: 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
   --f-marker: 'Ink Free', 'Segoe Print', 'Comic Sans MS', cursive;
-  --f-ar: 'Amiri Quran', 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+  --f-ar: 'KFGQPC Hafs', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', serif;
+
+  /* Поле справа от плитки ScreenSwap на Surface (82 точки у правого края), app.css. */
+  --edge-r: 0px;
 
   color-scheme: light;
 }

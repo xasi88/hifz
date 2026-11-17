@@ -1,4 +1,6 @@
 // Маленькие помощники экрана: элементы, значки, шапка.
+import { mushaf } from './arabic.js?v=619c8135';
+
 export function h(tag, props, ...kids) {
   const el = document.createElement(tag);
   for (const [k, v] of Object.entries(props || {})) {
@@ -14,7 +16,7 @@ export function h(tag, props, ...kids) {
   return el;
 }
 
-export const ar = (text, cls = '') => h('span', { class: `ar ${cls}`.trim(), lang: 'ar', dir: 'rtl' }, text);
+export const ar = (text, cls = '') => h('span', { class: `ar ${cls}`.trim(), lang: 'ar', dir: 'rtl' }, mushaf(text));
 
 const PATHS = {
   back: '<path d="M15 5l-7 7 7 7"/>',

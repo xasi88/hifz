@@ -2,12 +2,12 @@
 // (тест сверяет его с js/version.js). Запись звука идёт кусками (Range), её браузер берёт сам.
 // Хранилище копий общее у всех приложений на xasi88.github.io: удаляем только свои (hifz-).
 // Свои файлы берём с cache: 'no-cache' (скилл «Выкладка»), чтобы новые не смешались со старыми.
-const CACHE = 'hifz-2.0.0';
+const CACHE = 'hifz-2.0.1';
 const CORE = [
   './', 'index.html', 'manifest.webmanifest', 'css/tokens.css', 'css/app.css',
   'js/app.js', 'js/ui.js', 'js/arabic.js', 'js/progress.js', 'js/audio.js', 'js/voice.js',
   'js/study.js', 'js/rounds.js', 'js/version.js', 'js/data/istikhara.js',
-  'fonts/amiri-quran.woff2', 'icons/icon.svg', 'icons/icon-192.png',
+  'fonts/hafs.woff2', 'icons/icon.svg', 'icons/icon-192.png',
 ];
 
 self.addEventListener('install', (e) => {
