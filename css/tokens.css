@@ -1,0 +1,37 @@
+/* Цвета и шрифты Хифза: тема «Фиолет и лайм», как у Органайзера.
+   Правила вида: docs/Брендбук.md. Новые цвета только здесь. */
+@font-face {
+  font-family: 'Amiri Quran';
+  src: url('../fonts/amiri-quran.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --bg: #6b3ff0;
+  --bg-dot: #5a2fd6;
+  --deep: #4a24c9;
+  --ink: #130a30;
+  --paper: #fff8f2;
+  --lilac: #efe6ff;
+  --lime: #c8f53a;
+  --lime-soft: #f3ffd0;
+  --pink: #ff5fae;
+  --sky: #6fd6ff;
+  --miss: #ff8a8a;
+  --ink-muted: #5d4f8c;
+
+  --line: 2.5px;
+  --shadow: 4px 4px 0 var(--ink);
+  --shadow-sm: 2px 2px 0 var(--ink);
+  --r: 18px;
+  --tap: 48px;
+  --tilt: -3deg;
+  --spring: cubic-bezier(.34, 1.56, .64, 1);
+
+  --f-heavy: 'Segoe UI Black', 'Arial Black', system-ui, sans-serif;
+  --f-text: 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --f-marker: 'Ink Free', 'Segoe Print', 'Comic Sans MS', cursive;
+  --f-ar: 'Amiri Quran', 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+
+  color-scheme: light;
+}
